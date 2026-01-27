@@ -35,6 +35,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-51S9KC7GV0"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-51S9KC7GV0');
+            `,
+          }}
+        />
+      </head>
       <body className={`${plusJakarta.variable} ${inter.className} antialiased`}>
         {children}
       </body>

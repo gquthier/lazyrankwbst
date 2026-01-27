@@ -62,8 +62,8 @@ export function LandingHeroNew() {
           Entrez votre URL. Notre IA analyse votre niche, génère des idées, rédige et publie des articles qui rankent. Sans intervention humaine.
         </p>
 
-        {/* MAIN INPUT (The Hero Star) */}
-        <div className="max-w-2xl mx-auto mb-8">
+        {/* MAIN INPUT (The Hero Star) - Sticky */}
+        <div className="max-w-2xl mx-auto mb-8 sticky bottom-4 z-50">
           <div className="relative group rounded-2xl transition-all duration-300 bg-white shadow-[0_4px_20px_-2px_rgba(0,0,0,0.05)] hover:shadow-xl border border-gray-200 p-2 flex items-center focus-within:shadow-[0_0_0_4px_rgba(0,0,0,0.05)] focus-within:border-black">
             <div className="pl-4 text-gray-400">
               <Globe className="h-6 w-6" />
