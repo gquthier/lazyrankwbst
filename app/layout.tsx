@@ -33,7 +33,8 @@ export const metadata: Metadata = {
     creator: "@lazyrank",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
 }
 
