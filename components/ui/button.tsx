@@ -1,40 +1,38 @@
-'use client';
+import * as React from "react"
 
-import * as React from "react";
-import { cn } from "@/lib/utils";
+import { Button as BaseButton, type ButtonProps as BaseButtonProps } from "@/components/Button"
+import { cx } from "@/lib/utils"
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'outline' | 'ghost';
-  size?: 'sm' | 'md' | 'lg';
+type Variant = "default" | "secondary" | "outline"
+
+type ButtonProps = Omit<BaseButtonProps, "variant"> & {
+  variant?: Variant
 }
 
-export function Button({
-  className,
-  variant = 'default',
-  size = 'md',
-  ...props
-}: ButtonProps) {
-  const variants = {
-    default: 'bg-black text-white hover:bg-gray-800',
-    outline: 'border border-gray-300 bg-transparent hover:bg-gray-50',
-    ghost: 'bg-transparent hover:bg-gray-100',
-  };
-
-  const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-  };
-
-  return (
-    <button
-      className={cn(
-        'inline-flex items-center justify-center rounded-lg font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-black/20 disabled:opacity-50 disabled:cursor-not-allowed',
-        variants[variant],
-        sizes[size],
-        className
-      )}
-      {...props}
-    />
-  );
+const variantMap: Record<Variant, BaseButtonProps["variant"]> = {
+  default: "primary",
+  secondary: "secondary",
+  outline: "secondary",
 }
+
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ variant = "default", className, ...props }, ref) => {
+    const isOutline = variant === "outline"
+
+    return (
+      <BaseButton
+        ref={ref}
+        variant={variantMap[variant]}
+        className={cx(
+          isOutline && "bg-transparent border border-border text-foreground hover:bg-accent",
+          className,
+        )}
+        {...props}
+      />
+    )
+  },
+)
+
+Button.displayName = "Button"
+
+export type { ButtonProps }

@@ -1,53 +1,49 @@
-import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
+import { GeistSans } from "geist/font/sans"
+import type { Metadata } from "next"
+import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] });
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-plus-jakarta"
-});
+import Footer from "@/components/ui/Footer"
+import { NavBar } from "@/components/ui/Navbar"
+import { siteConfig } from "./siteConfig"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lazyrank.io"),
-  title: "LazyRank - AI-Powered SEO Content Generation",
-  description: "Generate SEO-optimized content at scale. AI-powered article generation, keyword research, and content strategy for modern marketers.",
-  keywords: ["SEO", "AI content", "content generation", "keyword research", "content marketing"],
-  icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
-  },
+  title: siteConfig.name,
+  description: siteConfig.description,
+  keywords: ["Marketing", "Database", "Software"],
+  authors: [
+    {
+      name: "Lazyrank",
+      url: "",
+    },
+  ],
+  creator: "Lazyrank",
   openGraph: {
-    title: "LazyRank - AI-Powered SEO Content Generation",
-    description: "Votre contenu SEO, en pilote automatique. YOLO Mode activé.",
-    url: "https://lazyrank.io",
-    siteName: "LazyRank",
     type: "website",
-    images: [
-      {
-        url: '/og-image',
-        width: 1200,
-        height: 630,
-        alt: 'LazyRank - YOLO Mode',
-      },
-    ],
+    locale: "fr_FR",
+    url: siteConfig.url,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "LazyRank - AI-Powered SEO Content Generation",
-    description: "Votre contenu SEO, en pilote automatique. YOLO Mode activé.",
-    images: ['/og-image'],
+    title: siteConfig.name,
+    description: siteConfig.description,
+    creator: "@lazyrank",
   },
-};
+  icons: {
+    icon: "/favicon.ico",
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="fr">
       <head>
         {/* Google tag (gtag.js) */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-51S9KC7GV0"></script>
@@ -89,9 +85,13 @@ export default function RootLayout({
         </noscript>
         {/* End Meta Pixel Code */}
       </head>
-      <body className={`${plusJakarta.variable} ${inter.className} antialiased`}>
+      <body
+        className={`${GeistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}
+      >
+        <NavBar />
         {children}
+        <Footer />
       </body>
     </html>
-  );
+  )
 }
