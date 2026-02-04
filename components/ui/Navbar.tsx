@@ -44,6 +44,7 @@ export function NavBar() {
               </Link>
             </div>
           </nav>
+          {/* Desktop button */}
           <Button
             asChild
             variant="primary"
@@ -53,52 +54,17 @@ export function NavBar() {
               Reserver une démo
             </Link>
           </Button>
-          <Button
-            onClick={() => setOpen(!open)}
-            variant="secondary"
-            className="p-1.5 sm:hidden"
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          >
-            {!open ? (
-              <RiMenuFill
-                className="size-6 shrink-0 text-orange-500"
-                aria-hidden
-              />
-            ) : (
-              <RiCloseFill
-                className="size-6 shrink-0 text-orange-500"
-                aria-hidden
-              />
-            )}
-          </Button>
-        </div>
-        <nav
-          className={cx(
-            "mt-6 flex flex-col gap-6 text-lg ease-in-out will-change-transform sm:hidden",
-            open ? "" : "hidden",
-          )}
-        >
-          <ul className="space-y-4 font-medium">
-            <li onClick={() => setOpen(false)}>
-              <Link href="#solutions">Solutions</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link href="#analytics">Analytics</Link>
-            </li>
-            <li onClick={() => setOpen(false)}>
-              <Link href="#pricing">Tarif</Link>
-            </li>
-          </ul>
+          {/* Mobile button - replaces hamburger menu */}
           <Button
             asChild
             variant="primary"
-            className="text-lg !bg-orange-500 !hover:bg-orange-600 !border-orange-500 !text-black"
+            className="h-9 px-3 text-sm font-semibold sm:hidden !bg-orange-500 !hover:bg-orange-600 !border-orange-500 !text-black"
           >
             <Link href={siteConfig.baseLinks.calendly} target="_blank" rel="noopener noreferrer">
-              Reserver une démo
+              Réserver une démo
             </Link>
           </Button>
-        </nav>
+        </div>
       </div>
     </header>
   )
