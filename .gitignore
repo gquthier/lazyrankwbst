@@ -34,6 +34,10 @@ yarn-error.log*
 .DS_Store
 Thumbs.db
 
+# Old/backup folders
+newlplazyrank/
+old-website/
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts

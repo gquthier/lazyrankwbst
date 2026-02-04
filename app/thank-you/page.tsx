@@ -1,6 +1,6 @@
 'use client';
 
-import { LazyRankLogo } from '@/components/branding/LazyRankLogo';
+import { LazyRankLogo } from '@/components/ui/LazyRankLogo';
 import { CheckCircle2, Calendar, Sparkles, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect } from 'react';
@@ -19,7 +19,7 @@ export default function ThankYouPage() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <Link href="/" className="inline-block">
-            <LazyRankLogo size="md" />
+            <LazyRankLogo />
           </Link>
         </div>
       </header>
