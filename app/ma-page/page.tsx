@@ -10,7 +10,7 @@ const pricingTiers = [
   {
     name: "Starter",
     description: "Idéal pour lancer l'acquisition organique.",
-    price: 97,
+    price: 99,
     billingPeriod: "/mois",
     buttonText: "Démarrer",
     features: [
