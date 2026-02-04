@@ -80,7 +80,7 @@ export default function MAPage() {
           <div className="mx-auto">
             <div className="inline-flex max-w-full items-center gap-3 rounded-full bg-white/5 px-2.5 py-0.5 pr-3 pl-0.5 font-medium text-gray-900 shadow-lg ring-1 shadow-orange-400/20 ring-black/10 filter backdrop-blur-[1px] sm:text-sm">
               <span className="shrink-0 truncate rounded-full border bg-orange-50 px-2.5 py-1 text-sm text-orange-600 font-semibold sm:text-xs">
-                À partir de 99€/mois
+                À partir de 97€/mois
               </span>
               <span className="flex items-center gap-1 truncate">
                 <span className="w-full truncate">1 mois d'essai gratuit</span>
