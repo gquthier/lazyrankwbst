@@ -2,6 +2,8 @@
 
 import { RiArrowRightUpLine } from "@remixicon/react"
 import FarmFeatures from "@/components/ui/FarmFeatures"
+import Footer from "@/components/ui/Footer"
+import { NavBar } from "@/components/ui/Navbar"
 import Script from "next/script"
 
 const pricingTiers = [
@@ -63,12 +65,14 @@ export default function MAPage() {
   }
 
   return (
-    <main className="relative mx-auto flex flex-col w-full">
-      {/* Calendly Script */}
-      <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="lazyOnload"
-      />
+    <>
+      <NavBar scrollToSection="calendly-section" />
+      <main className="relative mx-auto flex flex-col w-full">
+        {/* Calendly Script */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
 
       {/* Hero Section - Sans animations */}
       <section aria-label="section principale" className="pt-40 sm:pt-56 w-full">
@@ -219,6 +223,8 @@ export default function MAPage() {
         </div>
       </section>
     </main>
+    <Footer />
+    </>
   )
 }
 

@@ -2,8 +2,10 @@ import Cta from "@/components/ui/Cta"
 import FeatureDivider from "@/components/ui/FeatureDivider"
 import Features from "@/components/ui/Features"
 import FarmFeatures from "@/components/ui/FarmFeatures"
+import Footer from "@/components/ui/Footer"
 import { HeroDashboards } from "@/components/ui/HeroDashboards"
 import { Hero } from "@/components/ui/Hero"
+import { NavBar } from "@/components/ui/Navbar"
 import { Pricing } from "@/components/ui/Pricing"
 import { SolarAnalytics } from "@/components/ui/SolarAnalytics"
 import Testimonial from "@/components/ui/Testimonial"
@@ -60,10 +62,12 @@ const pricingTiers = [
 
 export default function Home() {
   return (
-    <main className="relative mx-auto flex flex-col">
-      <div className="pt-56">
-        <Hero />
-      </div>
+    <>
+      <NavBar />
+      <main className="relative mx-auto flex flex-col">
+        <div className="pt-56">
+          <Hero />
+        </div>
       <div className="mt-16">
         <HeroDashboards />
       </div>
@@ -89,5 +93,7 @@ export default function Home() {
         <Cta />
       </div>
     </main>
+    <Footer />
+    </>
   )
 }
