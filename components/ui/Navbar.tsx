@@ -54,6 +54,9 @@ export function NavBar({ scrollToSection }: NavBarProps = {}) {
               <Link className="px-2 py-1 text-gray-900" href="#pricing">
                 Tarif
               </Link>
+              <Link className="px-2 py-1 text-gray-900" href="/blog">
+                Blog
+              </Link>
             </div>
           </nav>
           {/* Desktop button */}
